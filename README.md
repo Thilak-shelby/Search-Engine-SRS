@@ -44,6 +44,11 @@ This repository includes the following artifacts:
 
 ---
 
+## Repository Structure
+README.md
+docs/
+diagrams/
+
 ## Key Features Defined in the SRS
 - Search query processing and ranking
 - Autocorrection and query suggestions
