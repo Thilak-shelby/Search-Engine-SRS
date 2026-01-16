@@ -47,7 +47,7 @@ This repository includes the following artifacts:
 ## Repository Structure
 README.md/
 docs/
-diagrams/
+diagrams
 
 ## Key Features Defined in the SRS
 - Search query processing and ranking
