@@ -45,7 +45,7 @@ This repository includes the following artifacts:
 ---
 
 ## Repository Structure
-README.md
+README.md/
 docs/
 diagrams/
 
