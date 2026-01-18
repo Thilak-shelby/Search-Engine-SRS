@@ -78,6 +78,41 @@ principles.
 
 ---
 
+## REST API Implementation 
+
+This repository also includes a **REST-based backend implementation**
+developed as part of the Software Engineering laboratory assignment.
+
+The REST API provides functionality to:
+
+- Register websites for crawling
+- Create crawl jobs for registered websites
+- Query existing websites and crawl jobs
+
+The implementation follows REST principles and uses JSON as the primary
+data exchange format.
+
+### Implemented Endpoints
+
+#### Websites
+- `POST /api/websites` – Register a new website
+- `GET /api/websites` – Retrieve all registered websites
+
+#### Crawl Jobs
+- `POST /api/crawl-jobs` – Create a crawl job for a website
+- `GET /api/crawl-jobs` – Retrieve crawl jobs (with optional filtering)
+
+### Technology Stack
+- Java
+- JAX-RS (Jersey)
+- Grizzly HTTP Server
+- In-memory data storage (no database)
+
+This implementation is **independent of the SRS** and serves as a prototype
+demonstrating RESTful API design.
+
+---
+
 ## Author
 **Thilakraj Soundararajan**
 
