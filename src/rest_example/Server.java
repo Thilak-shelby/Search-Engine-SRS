@@ -19,7 +19,6 @@ public class Server {
     public static void main(String[] args) throws Exception {
         Logger.getLogger("org.glassfish").setLevel(Level.SEVERE);
 
-        // Base URI is now "/" so resources can define "/robot/battery"
         URI baseUri = new URI("http://0.0.0.0:8080/");
         ResourceConfig config = ResourceConfig.forApplicationClass(MyApplication.class);
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(baseUri, config);

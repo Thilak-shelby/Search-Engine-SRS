@@ -9,8 +9,8 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Path("api/websites")
-@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+@Produces({MediaType.APPLICATION_JSON})
+@Consumes({MediaType.APPLICATION_JSON})
 public class WebsiteResource {
 
     private static final Map<String, Website> websites = new ConcurrentHashMap<>();
@@ -51,8 +51,7 @@ public class WebsiteResource {
 
     // ✅ GET /api/websites  -> List Websites (?status=active optional)
     @GET
-    public WebsiteList listWebsites(@QueryParam("status") String status) {
-
+    public List<Website> listWebsites(@QueryParam("status") String status) {
         List<Website> result = new ArrayList<>(websites.values());
 
         if (status != null && !status.trim().isEmpty()) {
@@ -60,6 +59,6 @@ public class WebsiteResource {
             result.removeIf(w -> w.status == null || !w.status.equalsIgnoreCase(wanted));
         }
 
-        return new WebsiteList(result);
+        return result;
     }
 }

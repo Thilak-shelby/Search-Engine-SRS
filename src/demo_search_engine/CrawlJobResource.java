@@ -49,8 +49,8 @@ public class CrawlJobResource {
     // ✅ GET /api/crawl-jobs -> list all jobs
     
     @GET
-    public CrawlJobList listJobs(@QueryParam("websiteId") String websiteId,
-                                 @QueryParam("status") String status) {
+    public List<CrawlJob> listJobs(@QueryParam("websiteId") String websiteId,
+                                   @QueryParam("status") String status) {
 
         List<CrawlJob> result = new ArrayList<>(jobs.values());
 
@@ -61,10 +61,9 @@ public class CrawlJobResource {
 
         if (status != null && !status.trim().isEmpty()) {
             String wantedStatus = status.trim().toLowerCase();
-            result.removeIf(j -> j.status == null || !j.status.toLowerCase().equals(wantedStatus));
+            result.removeIf(j -> j.status == null || !j.status.equalsIgnoreCase(wantedStatus));
         }
 
-        return new CrawlJobList(result);   // ✅ FIXED
+        return result;
     }
-
 }
